@@ -16,9 +16,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
+import lombok.Data;
 
 //Room model
 @Entity
+@Data
 public class Room {
 
     @Id
@@ -59,46 +61,6 @@ public class Room {
 
     public Room(){
         this.bookings=new ArrayList<>();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getRoomType() {
-        return roomType;
-    }
-
-    public BigDecimal getRoomPrice() {
-        return roomPrice;
-    }
-
-    public boolean isBooked() {
-        return isBooked;
-    }
-
-    public List<BookedRoom> getBookings() {
-        return bookings;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setRoomType(String roomType) {
-        this.roomType = roomType;
-    }
-
-    public void setRoomPrice(BigDecimal roomPrice) {
-        this.roomPrice = roomPrice;
-    }
-
-    public void setBooked(boolean isBooked) {
-        this.isBooked = isBooked;
-    }
-
-    public void setBookings(List<BookedRoom> bookings) {
-        this.bookings = bookings;
     }
 
     @Override

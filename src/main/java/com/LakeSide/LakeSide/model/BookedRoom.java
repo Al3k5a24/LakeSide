@@ -10,8 +10,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.Data;
 
 @Entity
+@Data
 public class BookedRoom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,26 +67,6 @@ public class BookedRoom {
         this.totalGuests=NumOfAdults+NumOfChildren;
     }
 
-    public void setBookingId(Long bookingId) {
-        this.bookingId = bookingId;
-    }
-
-    public void setCheckInDate(LocalDate checkInDate) {
-        this.checkInDate = checkInDate;
-    }
-
-    public void setCheckOutDate(LocalDate checkOutDate) {
-        this.checkOutDate = checkOutDate;
-    }
-
-    public void setGuestFullName(String guestFullName) {
-        this.guestFullName = guestFullName;
-    }
-
-    public void setGuestEmail(String guestEmail) {
-        this.guestEmail = guestEmail;
-    }
-
     public void setNumOfAdults(int numOfAdults) {
         NumOfAdults = numOfAdults;
         //in case on some unpredicted change 
@@ -97,55 +79,5 @@ public class BookedRoom {
         calculateTotalGuest();
     }
 
-    public void setTotalGuests(int totalGuests) {
-        this.totalGuests = totalGuests;
-    }
-
-    public void setBookingConfCode(String bookingConfCode) {
-        this.bookingConfCode = bookingConfCode;
-    }
-
-    public void setRoom(Room room) {
-        this.room = room;
-    }
-
-    public Long getBookingId() {
-        return bookingId;
-    }
-
-    public LocalDate getCheckInDate() {
-        return checkInDate;
-    }
-
-    public LocalDate getCheckOutDate() {
-        return checkOutDate;
-    }
-
-    public String getGuestFullName() {
-        return guestFullName;
-    }
-
-    public String getGuestEmail() {
-        return guestEmail;
-    }
-
-    public int getNumOfAdults() {
-        return NumOfAdults;
-    }
-
-    public int getNumOfChildren() {
-        return NumOfChildren;
-    }
-
-    public int getTotalGuests() {
-        return totalGuests;
-    }
-
-    public String getBookingConfCode() {
-        return bookingConfCode;
-    }
-
-    public Room getRoom() {
-        return room;
-    }
+    
 }
