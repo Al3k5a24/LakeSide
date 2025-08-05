@@ -31,7 +31,7 @@ public class Room {
     private boolean isBooked=false;
 
     @Lob
-    private Blob photo;
+    private byte[] photo;
 
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<BookedRoom> bookings;
