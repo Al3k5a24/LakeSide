@@ -1,10 +1,8 @@
 package com.LakeSide.LakeSide.model;
 
 import java.math.BigDecimal;
-import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -16,7 +14,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
-import lombok.Data;
 
 //Room model
 @Entity

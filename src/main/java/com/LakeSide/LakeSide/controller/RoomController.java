@@ -14,10 +14,7 @@ import com.LakeSide.LakeSide.model.Room;
 import com.LakeSide.LakeSide.response.roomResponse;
 import com.LakeSide.LakeSide.service.IRoomService;
 
-import lombok.RequiredArgsConstructor;
-
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/rooms")
 public class RoomController {
 	
