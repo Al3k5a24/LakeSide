@@ -1,10 +1,8 @@
 package com.LakeSide.LakeSide.model;
 
 import java.math.BigDecimal;
-import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -16,11 +14,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
-import lombok.Data;
 
 //Room model
 @Entity
-@Data
 public class Room {
 
     @Id
@@ -31,7 +27,7 @@ public class Room {
     private boolean isBooked=false;
 
     @Lob
-    private Blob photo;
+    private byte[] photo;
 
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<BookedRoom> bookings;
@@ -68,6 +64,54 @@ public class Room {
         return "Room [id=" + id + ", roomType=" + roomType + ", roomPrice=" + roomPrice + ", isBooked=" + isBooked
                 + ", bookings=" + bookings + "]";
     }
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getRoomType() {
+		return roomType;
+	}
+
+	public void setRoomType(String roomType) {
+		this.roomType = roomType;
+	}
+
+	public BigDecimal getRoomPrice() {
+		return roomPrice;
+	}
+
+	public void setRoomPrice(BigDecimal roomPrice) {
+		this.roomPrice = roomPrice;
+	}
+
+	public boolean isBooked() {
+		return isBooked;
+	}
+
+	public void setBooked(boolean isBooked) {
+		this.isBooked = isBooked;
+	}
+
+	public byte[] getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}
+
+	public List<BookedRoom> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(List<BookedRoom> bookings) {
+		this.bookings = bookings;
+	}
 
     
 }
